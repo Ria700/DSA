@@ -16,9 +16,13 @@ public class LL_03insertRec {
             return newNode;
         }
 		
-        if(head.next == null) return head; // IMPORTANT
+        if(head == null) return head; // IMPORTANT-to check if pos > length of list, head should != null
         
         head.next = insertRec(head.next, data, pos-1);
         return head;
 	}
 }
+
+// Important
+// For a list: 1->2TTTTTTTTTTTT--ZZ//HH..,,->3, length = 3,
+// 0 <= pos <= 3 

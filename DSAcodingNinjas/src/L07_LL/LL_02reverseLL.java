@@ -18,15 +18,15 @@ public class LL_02reverseLL {
 	}
 	
 	
-	// Print Recursively
+	// Print Recursively.Time Complexity: O(n)
 	public static void printReverse(Node<Integer> head) {
 		if (head==null) return;
 		printReverse(head.next);
 		System.out.print(head.data+" ");
 	}
 	
-	
-	// 1. Iterative Reverse
+	// Reverse LL
+	// 1. Iterative Reverse.Time Complexity: O(n^2)
 	public static Node<Integer> reverse1I(Node<Integer> head){
 		if(head == null || head.next == null) return head;
         Node<Integer> temp = head;
@@ -52,7 +52,7 @@ public class LL_02reverseLL {
 	}
 	
 	
-	// 2. Iterative Reverse 
+	// 2. Iterative Reverse. Time Complexity: O(n)
 	public static Node<Integer> reverse2I(Node<Integer> head){
 		
 	        if(head == null || head.next == null ) return head;
@@ -68,7 +68,7 @@ public class LL_02reverseLL {
 	        return prev;
 		}
 	
-	// 3. Reverse Recursively. Time Complexity: O(n2)
+	// 3. Reverse Recursively. Time Complexity: O(n^2)
 	public static Node<Integer> reverse3Rec(Node<Integer> head) {
 		//Your code goes here
         if(head == null || head.next == null) return head;
@@ -102,6 +102,7 @@ public class LL_02reverseLL {
         DoubleNode d = reverse4Rec(head.next);
         d.tail.next = head;
         head.next = null;
+        d.tail=head; 
         
         return d;*/
 		
